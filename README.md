@@ -35,5 +35,5 @@ make
 
 * **Fizz** if the number is divisible by 3.
 * **Buzz** if the number is divisible by 5.
-* **FizzBuzz** if the number is divisible by 3 and by 5
+* **FizzBuzz** if the number is divisible by 3 and by 5. 
 * **The number itself** if the number is neither divisible by 3 nor by 5.
