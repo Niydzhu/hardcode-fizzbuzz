@@ -1,26 +1,39 @@
 # Usage
 
-#### ( In the linux terminal )
-
-1. Generating the hardcoded C file (Example with 25 lines of FizzBuzz) :
+1. Generating the hardcoded C file (Example with 10 lines of FizzBuzz)
 
 ```bash
 make
 ```
 ```bash
-./run.exe 25
+./hardcode.exe 10
 ```
 
-2. Now in the "destination" folder, executing the file :
+2. Executing the file
 
 ```bash
-make
+cd dest/ && make
 ```
 ```bash
 ./fizzbuzz.exe
 ```
 
-3. Profit (You are now a programmer!)
+
+
+# Output
+
+> Files
+```
+📂hardcode-fizzbuzz
+ ┣ 📂dest
+ ┃ ┣ 📜fizzbuzz.c
+ ┃ ┣ 📜fizzbuzz.exe
+ ┃ ┗ 📜Makefile
+ ┣ 📜hardcode.c
+ ┣ 📜hardcode.exe
+ ┣ 📜Makefile
+ ┗ 📜README.md
+```
 
 > fizzbuzz.c
 ```c
@@ -45,28 +58,24 @@ int main(void)
 	printf("8\n");
 	printf("Fizz\n");
 	printf("Buzz\n");
-	printf("11\n");
-	printf("Fizz\n");
-	printf("13\n");
-	printf("14\n");
-	printf("FizzBuzz\n");
-	printf("16\n");
-	printf("17\n");
-	printf("Fizz\n");
-	printf("19\n");
-	printf("Buzz\n");
-	printf("Fizz\n");
-	printf("22\n");
-	printf("23\n");
-	printf("Fizz\n");
-	printf("Buzz\n");
 
 	return 0;
 }
 ```
 
+> Makefile
+```Makefile
+c=gcc
+op=-Wall -Wextra
+exe=fizzbuzz.exe
 
-# FizzBuzz
+all: fizzbuzz.c
+	$(c) $(op) fizzbuzz.c -o $(exe)
+```
+
+
+
+# About FizzBuzz
 
 > FizzBuzz has been used as an interview screening device for Computer
 > programmers. Writing computer program to output the first 100 FizzBuzz

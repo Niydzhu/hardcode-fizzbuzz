@@ -1,6 +1,6 @@
 c=gcc
 op=-Wall -Wextra
-execFileName=run.exe
+exe=hardcode.exe
 
-all: hardcodedFizzBuzz.c
-	$(c) $(op) hardcodedFizzBuzz.c -o $(execFileName)
+all: hardcode.c
+	$(c) $(op) hardcode.c -o $(exe)

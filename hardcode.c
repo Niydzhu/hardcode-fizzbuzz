@@ -1,11 +1,9 @@
 /**
- * @file hardcodedFizzBuzz.c
+ * @file hardcode.c
  * @author Niiju
- * @brief Outputs a "fizzbuzz.c" file which is a hardcoded FizzBuzz, length
- * defined by the number in the argument of this file's executable.
+ * @brief Outputs a "fizzbuzz.c" file which is a hardcoded FizzBuzz, the length
+ * defined by the number in the argument when executing. 
  * It also creates a Makefile to quickly compile and then execute the fizzbuzz.
- * @version 1.0
- * @date 2020-11-24
  *
  */
 
@@ -26,13 +24,13 @@
 /*                         Constants & Definitions                          */
 /* ------------------------------------------------------------------------ */
 
-#define DIRECTORY_NAME "destination"
+#define DIRECTORY_NAME "dest"
 #define EXECUTABLE_NAME "fizzbuzz.exe"
 
 
 
 /* ------------------------------------------------------------------------ */
-/*                               Prototypes                                 */
+/*                           Function Prototypes                            */
 /* ------------------------------------------------------------------------ */
 
 bool createCFile(char* dirName, int nbLines);
@@ -90,7 +88,7 @@ int main(int argc, char const* argv[])
 /**
  * @brief Creates the "fizzbuzz.c" file.
  *
- * @param dirName Name of the directory to put the file in
+ * @param dirName Name of the directory to create the file in
  * @param nbLines Number of lines to print
  */
 bool createCFile(char* dirName, int nbLines)
@@ -128,7 +126,7 @@ bool createCFile(char* dirName, int nbLines)
 /**
  * @brief Creates the Makefile.
  *
- * @param dirName Name of the directory to put the Makefile in
+ * @param dirName Name of the directory to create the Makefile in
  */
 bool createMakefile(char* dirName)
 {
@@ -148,9 +146,9 @@ bool createMakefile(char* dirName)
     // Content of the Makefile
     fprintf(f, "c=gcc\n");
     fprintf(f, "op=-Wall -Wextra\n");
-    fprintf(f, "execFileName=%s\n", EXECUTABLE_NAME);
+    fprintf(f, "exe=%s\n", EXECUTABLE_NAME);
     fprintf(f, "\nall: fizzbuzz.c\n");
-    fprintf(f, "\t$(c) $(op) fizzbuzz.c -o $(execFileName)\n");
+    fprintf(f, "\t$(c) $(op) fizzbuzz.c -o $(exe)\n");
 
     fclose(f);
     printf("Done. \n");
